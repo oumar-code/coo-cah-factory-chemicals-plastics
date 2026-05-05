@@ -36,8 +36,8 @@ graph TB
         IOT["IoT Sensor Network\n(Edge gateways)"]
     end
 
-    ERP -->|Production order (PI01/ORDERS)| MES_CORE
-    MES_CORE -->|Confirmations, actuals (CONF, GOODS_MVMT)| ERP
+    ERP -->|Production order PI01/ORDERS| MES_CORE
+    MES_CORE -->|Confirmations, actuals CONF/GOODS_MVMT| ERP
     MES_CORE --> RECIPE
     MES_CORE --> BATCH
     MES_CORE --> OEE
@@ -46,12 +46,12 @@ graph TB
     MES_CORE --> SCHED
     MES_CORE --> RPT
 
-    MES_CORE -->|Recipe download (process parameters)| OPC_UA_GW
-    OPC_UA_GW -->|Real-time process data (read)| HIST
-    OPC_UA_GW -->|Process data (read)| DCS
+    MES_CORE -->|Recipe download - process parameters| OPC_UA_GW
+    OPC_UA_GW -->|Real-time process data read| HIST
+    OPC_UA_GW -->|Process data read| DCS
     DCS --> HIST
     IOT --> HIST
-    SIS -->|Alarm/ESD status (read-only)| MES_CORE
+    SIS -->|Alarm/ESD status read-only| MES_CORE
 
     style SIS fill:#ff6666,color:#fff
 ```
@@ -211,13 +211,13 @@ graph LR
     INFERENCE["Real-time Inference\n(REST API endpoints)"]
     DCS_WB["DCS Setpoint Write-back\n(Phase 3 only — approved loops)"]
 
-    HIST -->|Historian REST API (read-only)| AI_INGEST
-    MES_API -->|REST API (read-only)| AI_INGEST
-    ENERGY -->|SCADA Modbus/REST (read-only)| AI_INGEST
+    HIST -->|Historian REST API read-only| AI_INGEST
+    MES_API -->|REST API read-only| AI_INGEST
+    ENERGY -->|SCADA Modbus/REST read-only| AI_INGEST
     AI_INGEST --> FEATURE
     FEATURE --> TRAIN
     TRAIN -->|Model artefacts| INFERENCE
-    INFERENCE -->|Recommendations (JSON)| MES_API
+    INFERENCE -->|Recommendations JSON| MES_API
     INFERENCE -->|Phase 3 only — via approved DCS path| DCS_WB
 ```
 
