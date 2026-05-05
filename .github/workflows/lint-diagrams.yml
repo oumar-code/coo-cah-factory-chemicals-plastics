@@ -27,6 +27,9 @@ jobs:
       - name: Install mermaid-js CLI
         run: npm install -g @mermaid-js/mermaid-cli
 
+      - name: Create Puppeteer config (no-sandbox for GitHub Actions runner)
+        run: echo '{"args": ["--no-sandbox", "--disable-setuid-sandbox"]}' > /tmp/puppeteer-config.json
+
       - name: Extract and validate Mermaid diagrams
         run: |
           set -e
@@ -65,7 +68,7 @@ jobs:
           for mmdfile in "$TMPDIR"/*.mmd; do
             [ -f "$mmdfile" ] || continue
             echo "  Validating: $mmdfile"
-            if ! mmdc -i "$mmdfile" -o "$TMPDIR/$(basename "$mmdfile" .mmd).svg" 2>&1; then
+            if ! mmdc -i "$mmdfile" -o "$TMPDIR/$(basename "$mmdfile" .mmd).svg" -p /tmp/puppeteer-config.json 2>&1; then
               echo "  ❌ FAILED: $mmdfile"
               ERRORS=$((ERRORS + 1))
             else
@@ -163,7 +166,7 @@ jobs:
 
           try:
               with open('mkdocs.yml', 'r') as f:
-                  config = yaml.safe_load(f)
+                  config = yaml.load(f, Loader=yaml.FullLoader)
               print("✅ mkdocs.yml is valid YAML")
               print(f"   site_name: {config.get('site_name')}")
               nav = config.get('nav', [])
