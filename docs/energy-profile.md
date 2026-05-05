@@ -202,7 +202,7 @@ graph TD
     EMS -->|Sub-metering data| PROD
     EMS -->|Sub-metering data| UTIL
 
-    MES["MES / AI Platform"] -->|Energy scheduling AI\n(Phase 2)| EMS
+    MES["MES / AI Platform"] -->|Energy scheduling AI - Phase 2| EMS
 ```
 
 ### 6.2 EMS Functions

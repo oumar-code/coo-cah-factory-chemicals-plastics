@@ -207,8 +207,8 @@ flowchart LR
     SILO -->|Pneumatic conveying| MOULD
     RM --> EXTRU
     RM --> MOULD
-    HAZ -->|Additives\n(controlled)| EXTRU
-    HAZ -->|Additives\n(controlled)| MOULD
+    HAZ -->|Additives - controlled| EXTRU
+    HAZ -->|Additives - controlled| MOULD
 
     EXTRU -->|Film rolls\n Film samples| QC
     MOULD -->|Bottles\nPreforms\nHousings| QC

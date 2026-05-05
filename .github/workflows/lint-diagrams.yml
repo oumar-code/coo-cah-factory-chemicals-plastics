@@ -28,7 +28,8 @@ jobs:
         run: npm install -g @mermaid-js/mermaid-cli
 
       - name: Create Puppeteer config (no-sandbox for GitHub Actions runner)
-        run: echo '{"args": ["--no-sandbox", "--disable-setuid-sandbox"]}' > /tmp/puppeteer-config.json
+        run: |
+          echo '{"args": ["--no-sandbox", "--disable-setuid-sandbox"]}' > /tmp/puppeteer-config.json
 
       - name: Extract and validate Mermaid diagrams
         run: |
@@ -163,6 +164,7 @@ jobs:
         run: |
           python3 - <<'PYEOF'
           import yaml, sys
+          import pymdownx.superfences
 
           try:
               with open('mkdocs.yml', 'r') as f:
