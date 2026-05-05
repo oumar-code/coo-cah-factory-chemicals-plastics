@@ -1,0 +1,85 @@
+site_name: Coo-Cah Plastics & Polymers Factory
+site_description: >
+  Blueprint, operational docs & AI-integration specifications for the Coo-Cah Plastics & Polymers
+  Factory (Agbara/Sagamu, Nigeria). Tier 1 Critical Infrastructure — Coo-Cah Technologies Holdings.
+site_author: Coo-Cah Technologies Holdings
+site_url: https://oumar-code.github.io/coo-cah-factory-chemicals-plastics/
+
+repo_name: oumar-code/coo-cah-factory-chemicals-plastics
+repo_url: https://github.com/oumar-code/coo-cah-factory-chemicals-plastics
+edit_uri: edit/main/
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: teal
+      accent: orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: teal
+      accent: orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - toc.follow
+    - search.highlight
+    - content.code.copy
+
+plugins:
+  - search
+  - mermaid2
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.details
+  - tables
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+nav:
+  - Home: README.md
+  - Master Repo Reference: MASTER_REPO_REF.md
+  - Factory Documents:
+      - Machinery & Equipment: docs/machinery.md
+      - Energy Profile: docs/energy-profile.md
+      - Floor Plan & Site Layout: docs/floor-plan.md
+      - Automation Roadmap: docs/automation-roadmap.md
+      - Supply Chain: docs/supply-chain.md
+      - Regulatory & Compliance: docs/regulatory.md
+      - CapEx / OpEx Model: docs/capex-opex.md
+      - Digital Twin: docs/digital-twin.md
+      - MES Integration: docs/mes-integration.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/oumar-code/Coo-Kah-Doks
+      name: Master Repository — Coo-Kah-Doks
+  analytics:
+    provider: google
+    property: ""
+
+copyright: >
+  Copyright &copy; 2025 Coo-Cah Technologies Holdings —
+  <a href="https://github.com/oumar-code/Coo-Kah-Doks">Coo-Kah-Doks Master Repo</a>

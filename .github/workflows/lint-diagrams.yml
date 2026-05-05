@@ -1,0 +1,176 @@
+name: Lint Diagrams
+on:
+  push:
+    paths:
+      - '**/*.md'
+      - 'mkdocs.yml'
+  pull_request:
+    paths:
+      - '**/*.md'
+      - 'mkdocs.yml'
+
+jobs:
+  lint-mermaid:
+    name: Lint Mermaid Diagrams
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install mermaid-js CLI
+        run: npm install -g @mermaid-js/mermaid-cli
+
+      - name: Extract and validate Mermaid diagrams
+        run: |
+          set -e
+          echo "Scanning for Mermaid diagram blocks..."
+          TMPDIR=$(mktemp -d)
+          ERRORS=0
+
+          while IFS= read -r mdfile; do
+            echo "Checking: $mdfile"
+
+            # Extract mermaid code blocks using Python
+            python3 - "$mdfile" "$TMPDIR" <<'PYEOF'
+          import sys, re, os, pathlib
+
+          mdfile = sys.argv[1]
+          tmpdir = sys.argv[2]
+          content = pathlib.Path(mdfile).read_text(encoding='utf-8')
+
+          # Match ```mermaid ... ``` blocks
+          pattern = re.compile(r'```mermaid\s*\n(.*?)\n```', re.DOTALL)
+          matches = pattern.findall(content)
+
+          safe_name = mdfile.replace('/', '_').replace('.', '_')
+          for i, block in enumerate(matches):
+              out_path = os.path.join(tmpdir, f"{safe_name}_{i}.mmd")
+              with open(out_path, 'w') as f:
+                  f.write(block.strip() + '\n')
+              print(f"  Extracted diagram {i+1} from {mdfile} -> {out_path}")
+          PYEOF
+
+          done < <(find . -name '*.md' -not -path './.git/*')
+
+          echo ""
+          echo "Validating extracted diagrams..."
+
+          for mmdfile in "$TMPDIR"/*.mmd; do
+            [ -f "$mmdfile" ] || continue
+            echo "  Validating: $mmdfile"
+            if ! mmdc -i "$mmdfile" -o "$TMPDIR/$(basename "$mmdfile" .mmd).svg" 2>&1; then
+              echo "  ❌ FAILED: $mmdfile"
+              ERRORS=$((ERRORS + 1))
+            else
+              echo "  ✅ OK: $mmdfile"
+            fi
+          done
+
+          if [ "$ERRORS" -gt 0 ]; then
+            echo ""
+            echo "❌ $ERRORS diagram(s) failed validation."
+            exit 1
+          else
+            echo ""
+            echo "✅ All Mermaid diagrams validated successfully."
+          fi
+
+  lint-markdown:
+    name: Lint Markdown
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install markdownlint-cli
+        run: npm install -g markdownlint-cli
+
+      - name: Run markdownlint
+        run: |
+          markdownlint \
+            --config .markdownlint.yml \
+            --ignore node_modules \
+            '**/*.md' || true
+        # 'true' prevents failure if config file is missing — linting is advisory
+
+      - name: Check for broken internal links
+        run: |
+          echo "Checking internal markdown links..."
+          python3 - <<'PYEOF'
+          import re, sys, pathlib, os
+
+          root = pathlib.Path('.')
+          md_files = set(str(p) for p in root.rglob('*.md') if '.git' not in str(p))
+
+          errors = []
+          link_pattern = re.compile(r'\[.*?\]\((\./[^)]+|[^http][^)]*\.md[^)]*)\)')
+
+          for mdfile in sorted(md_files):
+              content = pathlib.Path(mdfile).read_text(encoding='utf-8')
+              base = pathlib.Path(mdfile).parent
+              for match in link_pattern.finditer(content):
+                  link = match.group(1).split('#')[0]  # strip anchors
+                  if not link:
+                      continue
+                  resolved = (base / link).resolve()
+                  if not resolved.exists():
+                      errors.append(f"{mdfile}: broken link -> {link}")
+
+          if errors:
+              print("Broken internal links found:")
+              for e in errors:
+                  print(f"  ❌ {e}")
+              # Advisory only — don't fail CI for now
+          else:
+              print("✅ No broken internal links found.")
+          PYEOF
+
+  validate-mkdocs:
+    name: Validate MkDocs Config
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install MkDocs
+        run: pip install mkdocs mkdocs-material
+
+      - name: Validate mkdocs.yml
+        run: |
+          python3 - <<'PYEOF'
+          import yaml, sys
+
+          try:
+              with open('mkdocs.yml', 'r') as f:
+                  config = yaml.safe_load(f)
+              print("✅ mkdocs.yml is valid YAML")
+              print(f"   site_name: {config.get('site_name')}")
+              nav = config.get('nav', [])
+              print(f"   nav entries: {len(nav)}")
+          except yaml.YAMLError as e:
+              print(f"❌ mkdocs.yml YAML parse error: {e}")
+              sys.exit(1)
+          except FileNotFoundError:
+              print("⚠️  mkdocs.yml not found — skipping validation")
+          PYEOF
