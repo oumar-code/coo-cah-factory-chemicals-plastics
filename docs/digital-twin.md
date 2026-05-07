@@ -3,7 +3,7 @@
 **Factory:** Coo-Cah Plastics & Polymers Factory (CCH-PLS)
 **Document:** Digital Twin Architecture & Asset Registry v1.0
 **Status:** PLANNED — Phase 1 Foundation; Phase 2 Live Twin
-**Master Repo Reference:** [Coo-Kah-Doks / docs / ai-platform.md](https://github.com/oumar-code/Coo-Kah-Doks)
+**Master Repo Reference:** [Coo-Kah-Doks — platform/digital-twin-platform-architecture.md](https://github.com/oumar-code/Coo-Kah-Doks/blob/main/platform/digital-twin-platform-architecture.md)
 
 ---
 
@@ -31,7 +31,7 @@ graph TB
 
     subgraph "Layer 1 — Data Foundation (Phase 1 — Day 1)"
         HIST["Process Historian\n(AVEVA PI / Honeywell Uniformance)"]
-        MES_D["MES Production Records\n(Batch, OEE, quality)"]
+        MES_D["MES (Siemens Opcenter — confirmed per ADR-002 in Coo-Kah-Doks) Production Records\n(Batch, OEE, quality)"]
         IOT_D["IoT Sensor Stream\n(Vibration, temperature, current)"]
         DCS_D["DCS Real-time Data\n(Process tags, alarms, setpoints)"]
     end
@@ -146,7 +146,7 @@ CCH-PLS (Site)
 | `IM-xx-01_PI_CLAMP` | Clamp force | Tie-bar strain gauge | 1 s |
 | `IM-xx-01_SI_SCREW` | Screw position / speed | Linear encoder | 100 ms |
 | `IM-xx-01_PI_MOTOR` | Hydraulic pump power (kW) | Power analyser | 10 s |
-| `IM-xx-01_CT_CYCLE` | Cycle time | Timer from MES | Per cycle |
+| `IM-xx-01_CT_CYCLE` | Cycle time | Timer from MES (Siemens Opcenter — confirmed per ADR-002 in Coo-Kah-Doks) | Per cycle |
 | `IM-xx-01_TI_MOULD_S` | Mould water supply temp | PT100 | 10 s |
 | `IM-xx-01_TI_MOULD_R` | Mould water return temp | PT100 | 10 s |
 
@@ -203,7 +203,7 @@ graph LR
 
     subgraph "Enterprise Level (IT/OT DMZ)"
         OPC_UA["OPC UA Server\n(Historian tag bridge)"]
-        MES_SRV["MES Server\n(Opcenter / equivalent)"]
+        MES_SRV["MES Server\n(Siemens Opcenter — confirmed per ADR-002 in Coo-Kah-Doks)"]
         ERP["ERP System\n(SAP S/4HANA / Odoo)"]
         AI_PLT["AI Platform\n(Phase 2+)"]
         CLOUD["Cloud Backup\n(Historian snapshot)"]
@@ -229,7 +229,7 @@ graph LR
 
 **IT/OT Network Segmentation:**
 - DCS network: Isolated VLAN, no internet access, no ERP direct connection
-- OPC UA gateway: Unidirectional data diode (no write-back from MES/ERP to DCS without explicit Engineering Change)
+- OPC UA gateway: Unidirectional data diode (no write-back from MES (Siemens Opcenter — confirmed per ADR-002 in Coo-Kah-Doks)/ERP to DCS without explicit Engineering Change)
 - SIS: Completely isolated — no network connection; hardwired only
 - AI platform connection: Read-only historian data only in Phase 1/2; Phase 3 write-back via DCS approved loops only
 
@@ -280,7 +280,7 @@ Each physical asset in the registry has a corresponding digital twin record:
 
 | Phase | Timeline | Twin Capability |
 |-------|----------|----------------|
-| Phase 1 | Month 0–12 | Asset registry populated; DCS/historian live; IoT sensors streaming; MES linking batch to process data |
+| Phase 1 | Month 0–12 | Asset registry populated; DCS/historian live; IoT sensors streaming; MES (Siemens Opcenter — confirmed per ADR-002 in Coo-Kah-Doks) linking batch to process data |
 | Phase 1+ | Month 6–18 | Baseline performance models established from 6 months of production data |
 | Phase 2 | Month 12–24 | Live synchronised twin; AI PdM models active; virtual sensors for unmeasured states |
 | Phase 2+ | Month 18–30 | Process simulation model (Aspen dynamics) integrated; 3D visualisation layer |
