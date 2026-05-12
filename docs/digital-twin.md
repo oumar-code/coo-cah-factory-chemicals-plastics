@@ -121,62 +121,14 @@ CCH-PLS (Site)
 
 ## 3. Sensor Map — Phase 1 IoT Coverage
 
-### 3.1 Extruder Assets (per extruder unit)
+The detailed sensor registry has been moved to [docs/sensor-map.md](./sensor-map.md).
 
-| Tag Pattern | Measurement | Sensor Type | Scan Rate | Historian |
-|-------------|-------------|-------------|-----------|-----------|
-| `EXT-xx-01_TI_Z1` to `_Z6` | Barrel temperature zone 1–6 | Type K thermocouple | 1 s | ✅ |
-| `EXT-xx-01_TI_MELT` | Melt temperature (die adapter) | Melt thermocouple | 1 s | ✅ |
-| `EXT-xx-01_PI_HEAD` | Die head pressure | Melt pressure transducer | 1 s | ✅ |
-| `EXT-xx-01_SI_SCREW` | Screw speed (RPM) | Encoder on gearbox output | 1 s | ✅ |
-| `EXT-xx-01_II_MOTOR` | Motor current (A) | CT on drive panel | 1 s | ✅ |
-| `EXT-xx-01_PI_MOTOR` | Motor active power (kW) | Power analyser | 10 s | ✅ |
-| `EXT-xx-01_VIB_GB` | Gearbox vibration (3-axis) | MEMS accelerometer | 100 Hz → RMS 1 s | ✅ |
-| `EXT-xx-01_TI_GB` | Gearbox oil temperature | PT100 | 10 s | ✅ |
-| `EXT-xx-01_FI_COOL` | Cooling water flow rate | Electromagnetic flow meter | 10 s | ✅ |
-| `EXT-xx-01_TI_COOL_S` | Cooling water supply temp | PT100 | 10 s | ✅ |
-| `EXT-xx-01_TI_COOL_R` | Cooling water return temp | PT100 | 10 s | ✅ |
+This standalone document now serves as the authoritative source for:
 
-### 3.2 Injection Moulding Machine Assets
-
-| Tag Pattern | Measurement | Sensor Type | Scan Rate |
-|-------------|-------------|-------------|-----------|
-| `IM-xx-01_PI_INJ` | Injection pressure | Hydraulic pressure transducer | 100 ms |
-| `IM-xx-01_TI_BARREL` | Barrel temperature (zones) | Type J thermocouple | 1 s |
-| `IM-xx-01_PI_CLAMP` | Clamp force | Tie-bar strain gauge | 1 s |
-| `IM-xx-01_SI_SCREW` | Screw position / speed | Linear encoder | 100 ms |
-| `IM-xx-01_PI_MOTOR` | Hydraulic pump power (kW) | Power analyser | 10 s |
-| `IM-xx-01_CT_CYCLE` | Cycle time | Timer from MES (Siemens Opcenter — confirmed per ADR-002 in Coo-Kah-Doks) | Per cycle |
-| `IM-xx-01_TI_MOULD_S` | Mould water supply temp | PT100 | 10 s |
-| `IM-xx-01_TI_MOULD_R` | Mould water return temp | PT100 | 10 s |
-
-### 3.3 PET SBM Machine
-
-| Tag Pattern | Measurement | Sensor Type | Scan Rate |
-|-------------|-------------|-------------|-----------|
-| `SBM-B1-01_TI_OVEN_Z1` to `_Z8` | Oven zone temperature | Thermocouple | 1 s |
-| `SBM-B1-01_PI_BLOW` | Blow air pressure | Pressure transducer | 100 ms |
-| `SBM-B1-01_SI_STRETCH` | Stretch rod position | Linear encoder | 100 ms |
-| `SBM-B1-01_CT_BOTTLE` | Bottles/hour (production rate) | Counter | Per minute |
-| `SBM-B1-01_PI_MOTOR` | Machine power consumption | Power analyser | 10 s |
-
-### 3.4 Energy and Utilities
-
-| Tag | Measurement | Sensor Type | Scan Rate |
-|-----|-------------|-------------|-----------|
-| `SOLAR-E3-01_PI_GEN` | Solar PV generation (kW) | Inverter Modbus | 1 s |
-| `SOLAR-E3-01_EI_GEN` | Solar daily energy (kWh) | Inverter Modbus | 1 min |
-| `BESS-E3-01_SOC` | BESS state of charge (%) | BMS CAN bus | 10 s |
-| `BESS-E3-01_PI_CHRG` | BESS charge/discharge power (kW) | BMS CAN bus | 1 s |
-| `BESS-E3-01_TI_CELL_MAX` | Max cell temperature (°C) | BMS CAN bus | 10 s |
-| `GRID-E3-01_PI_IMPORT` | Grid import power (kW) | Smart meter Modbus | 1 s |
-| `GEN-E3-01_PI_OUTPUT` | Generator output (kW) | Generator controller | 10 s |
-| `GEN-E3-01_LI_FUEL` | Fuel level (L) | Ultrasonic level | 1 min |
-| `COMP-E2-01_PI_MOTOR` | Compressor motor power (kW) | Power analyser | 10 s |
-| `COMP-E2-01_PI_OUTLET` | Discharge pressure (bar) | Pressure transducer | 10 s |
-| `CHILL-E1-01_PI_MOTOR` | Chiller compressor power (kW) | Power analyser | 10 s |
-| `CHILL-E1-01_TI_EVAP_S` | Chilled water supply temp | PT100 | 10 s |
-| `CHILL-E1-01_TI_EVAP_R` | Chilled water return temp | PT100 | 10 s |
+- Tag naming convention and scan-rate policy
+- Expanded per-asset sensor tables (including protocol and gateway assignment)
+- Coverage summary against Phase 1 instrumentation targets
+- Cross-links to BIM asset anchors for physical sensor location context
 
 ---
 
