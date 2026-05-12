@@ -69,7 +69,12 @@ nav:
       - Regulatory & Compliance: docs/regulatory.md
       - CapEx / OpEx Model: docs/capex-opex.md
       - Digital Twin: docs/digital-twin.md
+      - Sensor Map: docs/sensor-map.md
       - MES Integration: docs/mes-integration.md
+      - BIM:
+          - Overview: docs/bim/README.md
+          - Asset Anchors: docs/bim/asset-anchors.md
+          - Zone Boundaries: docs/bim/zone-boundaries.md
 
 extra:
   social:
