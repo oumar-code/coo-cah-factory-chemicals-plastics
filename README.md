@@ -154,7 +154,11 @@ graph TD
 | [docs/regulatory.md](./docs/regulatory.md) | NESREA, DPR, SON, NAFDAC, NCS compliance checklist |
 | [docs/capex-opex.md](./docs/capex-opex.md) | Financial model: phased CapEx, OpEx, unit economics |
 | [docs/digital-twin.md](./docs/digital-twin.md) | Process asset registry, sensor map, DCS/SCADA integration |
+| [docs/sensor-map.md](./docs/sensor-map.md) | Standalone sensor registry: tags, scan rates, protocols, gateway mapping, coverage |
 | [docs/mes-integration.md](./docs/mes-integration.md) | Batch MES, DCS integration, API endpoints, AI data feeds |
+| [docs/bim/README.md](./docs/bim/README.md) | BIM layer overview, model standards, and document structure |
+| [docs/bim/asset-anchors.md](./docs/bim/asset-anchors.md) | Per-asset BIM anchors with grid references and approximate coordinates |
+| [docs/bim/zone-boundaries.md](./docs/bim/zone-boundaries.md) | Zone polygons, interface points, and spatial compliance constraints |
 
 ---
 
@@ -172,5 +176,4 @@ This repository is part of the **Coo-Cah Technologies Holdings** manufacturing e
 ---
 
 *Coo-Cah Technologies Holdings · Manufacturing Ecosystem · Plastics & Polymers Factory*
-
 
