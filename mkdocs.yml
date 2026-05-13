@@ -89,6 +89,7 @@ nav:
       - Gap Closure Report: gap-closure-report.md
       - AI Platform Status: ai-platform-status.md
       - Penetration Test Scoping: pentest-scoping.md
+      - Simulation Readiness: simulation-readiness.md
 
 extra:
   social:
