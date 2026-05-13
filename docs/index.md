@@ -11,7 +11,7 @@
 > in the entire Coo-Cah manufacturing ecosystem. It is the **single internal supplier** of plastic
 > components, packaging, bottles, and structural parts to every other Coo-Cah factory vertical.
 > It must be commissioned before or in parallel with the first revenue-generating Tier 2 factories.
-> See [MASTER_REPO_REF.md](../MASTER_REPO_REF.md) for traceability back to the
+> See [master-repo-ref.md](./master-repo-ref.md) for traceability back to the
 > [Coo-Kah-Doks](https://github.com/oumar-code/Coo-Kah-Doks) master repository.
 
 ---
@@ -373,15 +373,20 @@ by end of Phase 1.
 
 | Document | Description |
 |---|---|
-| [MASTER_REPO_REF.md](../MASTER_REPO_REF.md) | Master repo traceability, version reference, group standards |
+| [master-repo-ref.md](./master-repo-ref.md) | Master repo traceability, version reference, group standards |
+| [implementation-plan.md](./implementation-plan.md) | Programme workstreams, gates, dependencies, and risk register |
 | [machinery.md](./machinery.md) | Process plant and equipment register |
 | [energy-profile.md](./energy-profile.md) | Power demand analysis, solar/BESS sizing |
 | [floor-plan.md](./floor-plan.md) | Site layout: production zones, chemical storage, utilities |
 | [automation-roadmap.md](./automation-roadmap.md) | DCS/SIS/MES → AI optimisation → autonomous control roadmap |
 | [supply-chain.md](./supply-chain.md) | INDORAMA + Dangote sourcing, import protocol, intra-group flows |
+| [intragroup-supply-coordination.md](./intragroup-supply-coordination.md) | Intercompany call-off model, SLAs, and escalation paths |
 | [regulatory.md](./regulatory.md) | NESREA, DPR/NUPRC, NAFDAC, SON, NCS compliance |
 | [capex-opex.md](./capex-opex.md) | Financial model: phased CapEx, OpEx, unit economics |
 | [digital-twin.md](./digital-twin.md) | Process asset registry, sensor map, DCS/SCADA integration |
+| [ai-platform-status.md](./ai-platform-status.md) | AI service inventory, endpoint readiness, and go-live blockers |
+| [pentest-scoping.md](./pentest-scoping.md) | IT/OT security scope, rules of engagement, and deliverables |
+| [gap-closure-report.md](./gap-closure-report.md) | Gate 1 closure status for supplementary docs and site readiness |
 | [mes-integration.md](./mes-integration.md) | Batch MES, DCS integration, API endpoints, AI data feeds |
 
 ---
@@ -395,7 +400,7 @@ All group-wide standards (ISO requirements, automation phases, supply chain doct
 strategy, AI platform, MES integration standards) are defined in the master repo and this repository
 is fully traceable back to those standards. Factory blueprints originate from
 `factories/chemicals/plastics/` in the master repo. See
-[MASTER_REPO_REF.md](../MASTER_REPO_REF.md) for full traceability details.
+[master-repo-ref.md](./master-repo-ref.md) for full traceability details.
 
 ---
 

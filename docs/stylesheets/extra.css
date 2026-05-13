@@ -1,0 +1,20 @@
+/* Coo-Cah Plastics & Polymers Factory — MkDocs custom styles */
+
+:root {
+  --coo-cah-teal: #009688;
+  --coo-cah-orange: #ff9800;
+}
+
+.md-content__inner table {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+img[alt*="Status"] {
+  margin-right: 4px;
+}
+
+.admonition.warning {
+  border-left-color: var(--coo-cah-orange) !important;
+}

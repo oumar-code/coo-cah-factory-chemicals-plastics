@@ -61,7 +61,7 @@ This repository confirms compliance with all group-wide standards defined in
 | Automation Phases (Phase 1–3) | `docs/automation-strategy.md`                  | [automation-roadmap.md](automation-roadmap.md) | Adopted    |
 | Supply Chain Doctrine        | `docs/supply-chain-doctrine.md`                 | [supply-chain.md](supply-chain.md) | Adopted    |
 | Energy Strategy              | `docs/energy-strategy.md`                       | [energy-profile.md](energy-profile.md) | Adopted    |
-| AI Platform                  | `docs/ai-platform.md`                           | [digital-twin.md](digital-twin.md) | Adopted    |
+| AI Platform                  | `docs/ai-platform.md`                           | [ai-platform-status.md](ai-platform-status.md) | Adopted    |
 | MES Integration Standards    | `docs/mes-integration-standards.md`             | [mes-integration.md](mes-integration.md) | Adopted    |
 | Factory Document Template    | `factories/_template/`                          | —                              | v1.0 Used  |
 
