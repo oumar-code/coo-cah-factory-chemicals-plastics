@@ -146,14 +146,19 @@ graph TD
 | Document | Description |
 |----------|-------------|
 | [MASTER_REPO_REF.md](./MASTER_REPO_REF.md) | Link to master repo, version reference, standards traceability |
+| [docs/implementation-plan.md](./docs/implementation-plan.md) | Programme workstreams, gate criteria, dependencies, and risks |
 | [docs/machinery.md](./docs/machinery.md) | Full equipment register: moulders, extruders, DCS, SIS, QC lab, energy |
 | [docs/energy-profile.md](./docs/energy-profile.md) | Power demand analysis, solar/BESS sizing |
 | [docs/floor-plan.md](./docs/floor-plan.md) | Site layout: production zones, chemical storage, utilities |
 | [docs/automation-roadmap.md](./docs/automation-roadmap.md) | DCS/SIS/MES → AI optimisation → autonomous control roadmap |
 | [docs/supply-chain.md](./docs/supply-chain.md) | INDORAMA + Dangote sourcing, import protocol, intra-group flows |
+| [docs/intragroup-supply-coordination.md](./docs/intragroup-supply-coordination.md) | Intercompany material flows, call-off rules, SLAs, and escalation |
 | [docs/regulatory.md](./docs/regulatory.md) | NESREA, DPR, SON, NAFDAC, NCS compliance checklist |
 | [docs/capex-opex.md](./docs/capex-opex.md) | Financial model: phased CapEx, OpEx, unit economics |
 | [docs/digital-twin.md](./docs/digital-twin.md) | Process asset registry, sensor map, DCS/SCADA integration |
+| [docs/ai-platform-status.md](./docs/ai-platform-status.md) | AI service inventory, endpoint readiness, and production blockers |
+| [docs/pentest-scoping.md](./docs/pentest-scoping.md) | IT/OT pentest scope, rules, and expected deliverables |
+| [docs/gap-closure-report.md](./docs/gap-closure-report.md) | Gate 1 closure status for supplementary docs and site infrastructure |
 | [docs/sensor-map.md](./docs/sensor-map.md) | Standalone sensor registry: tags, scan rates, protocols, gateway mapping, coverage |
 | [docs/mes-integration.md](./docs/mes-integration.md) | Batch MES, DCS integration, API endpoints, AI data feeds |
 | [docs/bim/README.md](./docs/bim/README.md) | BIM layer overview, model standards, and document structure |
@@ -176,4 +181,3 @@ This repository is part of the **Coo-Cah Technologies Holdings** manufacturing e
 ---
 
 *Coo-Cah Technologies Holdings · Manufacturing Ecosystem · Plastics & Polymers Factory*
-
