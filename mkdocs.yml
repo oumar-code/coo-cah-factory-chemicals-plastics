@@ -1,7 +1,7 @@
 site_name: Coo-Cah Plastics & Polymers Factory
 site_description: >
-  Tier 1 Critical Infrastructure — blueprint, operational docs, and AI-integration specifications
-  for the Coo-Cah Plastics & Polymers Factory (Agbara/Sagamu, Nigeria).
+  Blueprint, operational docs & AI-integration specifications for the Coo-Cah Plastics & Polymers
+  Factory (Agbara/Sagamu, Nigeria). Tier 1 Critical Infrastructure — Coo-Cah Technologies Holdings.
 site_author: Coo-Cah Technologies Holdings
 site_url: https://oumar-code.github.io/coo-cah-factory-chemicals-plastics/
 
@@ -29,32 +29,17 @@ theme:
     - navigation.sections
     - navigation.expand
     - navigation.top
+    - toc.follow
     - search.highlight
-    - search.suggest
     - content.code.copy
-    - content.tabs.link
   icon:
     repo: fontawesome/brands/github
 
 plugins:
   - search
-  - mermaid2:
-      javascript: javascripts/mermaid.esm.min.mjs
+  - mermaid2
 
 markdown_extensions:
-  - admonition
-  - attr_list
-  - def_list
-  - footnotes
-  - md_in_html
-  - tables
-  - toc:
-      permalink: true
-  - pymdownx.details
-  - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
@@ -62,24 +47,32 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.details
   - pymdownx.tasklist:
       custom_checkbox: true
+  - tables
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
 
 nav:
   - Home: index.md
   - Master Repo Reference: master-repo-ref.md
-  - Implementation Plan: implementation-plan.md
-  - Factory Docs:
+  - Factory Documents:
       - Machinery & Equipment: machinery.md
       - Energy Profile: energy-profile.md
       - Floor Plan & Site Layout: floor-plan.md
       - Automation Roadmap: automation-roadmap.md
       - Supply Chain: supply-chain.md
-      - Intragroup Supply Coordination: intragroup-supply-coordination.md
       - Regulatory & Compliance: regulatory.md
       - CapEx / OpEx Model: capex-opex.md
       - Digital Twin: digital-twin.md
-      - Sensor Registry: sensor-map.md
       - MES Integration: mes-integration.md
       - BIM:
           - Overview: bim/README.md
@@ -102,12 +95,6 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/oumar-code/Coo-Kah-Doks
       name: Master Repository — Coo-Kah-Doks
-  analytics:
-    provider: google
-    property: ""
-
-extra_css:
-  - stylesheets/extra.css
 
 copyright: >
   Copyright &copy; 2025 Coo-Cah Technologies Holdings —
