@@ -1,88 +1,102 @@
 # Master Repository Reference
 
-## Coo-Kah-Doks — Single Source of Truth
-
-| Attribute               | Detail                                                              |
-|-------------------------|---------------------------------------------------------------------|
-| **Master Repo**         | [oumar-code/Coo-Kah-Doks](https://github.com/oumar-code/Coo-Kah-Doks) |
-| **Purpose**             | Single source of truth for strategy, architecture, blueprints, and group-wide standards |
-| **Template Version**    | v1.0                                                               |
-| **Factory Registration**| `orchestration/factory-status-registry.md` in Coo-Kah-Doks         |
-| **Factory Blueprint**   | `factories/chemicals/plastics/` in Coo-Kah-Doks                    |
-| **Template Format**     | `factories/_template/` in Coo-Kah-Doks                             |
+This document establishes the formal traceability link between this factory repository and the
+**Coo-Cah Technologies Holdings** master orchestrating repository.
 
 ---
 
-## Factory Registration in Orchestration Registry
+## Master Repository
 
-This factory is registered in the master repo at:
-
-```
-Coo-Kah-Doks / orchestration / factory-status-registry.md
-```
-
-| Field                  | Value                                             |
-|------------------------|---------------------------------------------------|
-| **Factory ID**         | CCH-PLS                                           |
-| **Factory Name**       | Coo-Cah Plastics & Polymers Factory               |
-| **Repository**         | `coo-cah-factory-chemicals-plastics`              |
-| **Vertical**           | Chemicals / Plastics                              |
-| **Tier**               | Tier 1 — Critical Infrastructure                 |
-| **Phase**              | Phase 1                                           |
-| **Status**             | PLANNED                                           |
-| **Registered Version** | v1.0                                              |
+| Attribute | Value |
+|---|---|
+| **Repository** | [oumar-code/Coo-Kah-Doks](https://github.com/oumar-code/Coo-Kah-Doks) |
+| **Purpose** | Single source of truth for strategy, architecture, blueprints, and group-wide standards |
+| **Template Version Used** | v1.0 |
+| **Factory Template Path** | `factories/_template/` |
+| **Factory Blueprint Path** | `factories/chemicals/plastics/` |
+| **Group Standards Path** | `docs/` (within master repo) |
 
 ---
 
-## Blueprint Traceability
+## Factory Registration
 
-All foundational blueprints for this factory originate from the master repo at:
-
-```
-Coo-Kah-Doks / factories / chemicals / plastics /
-```
-
-Documents in this repository have been expanded from those blueprints with factory-specific
-engineering specifications, supplier details, and operational data.
-
----
-
-## Group-Wide Standards Compliance
-
-This repository confirms compliance with all group-wide standards defined in
-`Coo-Kah-Doks / docs /`:
-
-| Standard Domain              | Master Repo Location                             | Status     |
-|------------------------------|--------------------------------------------------|------------|
-| ISO Requirements (9001, 14001, 45001, 50001) | `docs/iso-standards.md`        | Adopted    |
-| Automation Phases (Phase 1–3) | `docs/automation-strategy.md`                  | Adopted    |
-| Supply Chain Doctrine        | `docs/supply-chain-doctrine.md`                 | Adopted    |
-| Energy Strategy              | `docs/energy-strategy.md`                       | Adopted    |
-| AI Platform                  | `docs/ai-platform.md`                           | Adopted    |
-| MES Integration Standards    | `docs/mes-integration-standards.md`             | Adopted    |
-| Factory Document Template    | `factories/_template/`                          | v1.0 Used  |
+| Attribute | Value |
+|---|---|
+| **Factory ID** | CCH-PLS |
+| **Factory Name** | Coo-Cah Plastics & Polymers Factory |
+| **Repository** | `coo-cah-factory-chemicals-plastics` |
+| **Registration** | `orchestration/factory-status-registry.md` (in Coo-Kah-Doks) |
+| **Vertical** | Chemicals / Plastics |
+| **Tier** | Tier 1 — Critical Infrastructure |
+| **Phase** | Phase 1 (Planning) |
+| **Status** | PLANNED |
 
 ---
 
-## Versioning and Change Log
+## Group-Wide Standards Applied
 
-| Version | Date       | Author          | Change Summary                                    |
-|---------|------------|-----------------|---------------------------------------------------|
-| v1.0    | 2025-Q2    | Coo-Cah Engineering | Initial factory repository created from master repo blueprint |
+This repository follows all group-wide standards as defined in `docs/` within the master repo
+[oumar-code/Coo-Kah-Doks](https://github.com/oumar-code/Coo-Kah-Doks). The following standards
+are explicitly adopted and applied in this factory repository:
+
+| Standard Area | Master Repo Reference | Applied In This Repo |
+|---|---|---|
+| ISO 9001:2015 — Quality Management | `docs/standards/iso-9001.md` | [docs/regulatory.md](./docs/regulatory.md) |
+| ISO 45001:2018 — Health & Safety | `docs/standards/iso-45001.md` | [docs/regulatory.md](./docs/regulatory.md) |
+| ISO 14001:2015 — Environmental | `docs/standards/iso-14001.md` | [docs/regulatory.md](./docs/regulatory.md) |
+| ISO 50001:2018 — Energy | `docs/standards/iso-50001.md` | [docs/energy-profile.md](./docs/energy-profile.md) |
+| Automation Phases Framework | `docs/automation/phases.md` | [docs/automation-roadmap.md](./docs/automation-roadmap.md) |
+| Supply Chain Doctrine | `docs/supply-chain/doctrine.md` | [docs/supply-chain.md](./docs/supply-chain.md) |
+| Energy Strategy | `docs/energy/strategy.md` | [docs/energy-profile.md](./docs/energy-profile.md) |
+| MES Integration Standards | `docs/mes/integration-standards.md` | [docs/mes-integration.md](./docs/mes-integration.md) |
+| AI Platform Standards | `docs/ai/platform.md` | [docs/digital-twin.md](./docs/digital-twin.md) |
+| Digital Twin Architecture | `docs/digital-twin/architecture.md` | [docs/digital-twin.md](./docs/digital-twin.md) |
+| Factory Blueprint Template | `factories/_template/` | All `docs/` files |
+| Plastics Factory Blueprint | `factories/chemicals/plastics/` | All `docs/` files |
 
 ---
 
-## Referencing This Repo from the Master Repo
+## Compliance Confirmation
 
-When linking to documents in this repo from Coo-Kah-Doks, use:
+This repository confirms adherence to the following group-wide requirements from the master repo:
 
-```
-https://github.com/oumar-code/coo-cah-factory-chemicals-plastics
-```
-
-Factory-specific documents should be cross-referenced in the master repo's
-`orchestration/factory-status-registry.md` under factory ID `CCH-PLS`.
+- ✅ **Document format**: All documents use the standard markdown + Mermaid diagram format as
+  defined in `factories/_template/` within Coo-Kah-Doks.
+- ✅ **Naming conventions**: File names, SKU codes, zone labels, and machine designations follow
+  the group-wide naming standards.
+- ✅ **MES integration**: This factory adopts the group MES integration standard; all production
+  data, batch records, and process parameters flow to the group MES platform as specified in
+  `docs/mes/integration-standards.md`.
+- ✅ **Automation phases**: Phase 1, 2, and 3 definitions in this repo are consistent with the
+  group-wide automation phases framework.
+- ✅ **Energy strategy**: The 800 kWp + 900 kWh BESS design follows the group energy
+  independence strategy. Solar self-sufficiency target (≥ 70%) is aligned with the group standard.
+- ✅ **Supply chain doctrine**: 30-day safety stock for INDORAMA PP/PE, dual-source import policy,
+  and intra-group supplier priority are all per the group supply chain doctrine.
+- ✅ **Regulatory framework**: NESREA, DPR/NUPRC, NAFDAC, SON, and NIPC Pioneer Status
+  obligations are per the group Nigerian regulatory compliance framework.
 
 ---
 
-*This file must be kept current whenever the master repo version is updated or the factory registration changes.*
+## Version History
+
+| Version | Date | Description | Author |
+|---|---|---|---|
+| 1.0 | 2025 | Initial factory repository creation — Phase 1 Planning | Coo-Cah Engineering Team |
+| 1.1 | 2026-05 | Blueprint alignment v1.0 — added docs/index.md, docs/master-repo-ref.md, fixed mkdocs.yml | Blueprint Sync |
+
+---
+
+## Related Repositories
+
+| Repository | Relationship |
+|---|---|
+| [oumar-code/Coo-Kah-Doks](https://github.com/oumar-code/Coo-Kah-Doks) | Master orchestrating repo — strategy, blueprints, group standards |
+| `coo-cah-factory-electronics-power` | Key customer — plastic enclosures for inverter/UPS/SCC housings and power strip bodies |
+| `coo-cah-factory-chemicals-metallurgical` | Sister factory — Chemicals vertical; Phase 2 structural components investigation |
+| `coo-cah-factory-consumer-goods-*` | Customers — packaging film (CCH-PLS-003) and PET bottles (CCH-PLS-004) |
+
+---
+
+*For questions about master repo standards or template updates, open an issue in
+[oumar-code/Coo-Kah-Doks](https://github.com/oumar-code/Coo-Kah-Doks).*
