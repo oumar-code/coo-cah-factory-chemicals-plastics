@@ -87,9 +87,15 @@ nav:
           - Zone Boundaries: bim/zone-boundaries.md
   - Gate & Implementation Readiness:
       - Gap Closure Report: gap-closure-report.md
+      - Gate 3 Readiness Sprint: gate3-readiness-sprint.md
+      - Pentest Kickoff Pack: pentest-kickoff-pack.md
       - AI Platform Status: ai-platform-status.md
       - Penetration Test Scoping: pentest-scoping.md
+      - BIM & Sensor Traceability Matrix: bim-sensor-traceability-matrix.md
+      - Commissioning Data Acceptance Checklist: commissioning-data-acceptance-checklist.md
+      - Simulation Sign-Off Baseline: simulation-signoff-baseline.md
       - Simulation Readiness: simulation-readiness.md
+      - Gate 3 Evidence Dashboard: gate3-evidence-dashboard.md
 
 extra:
   social:

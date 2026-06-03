@@ -159,6 +159,12 @@ graph TD
 | [docs/ai-platform-status.md](./docs/ai-platform-status.md) | AI service inventory, endpoint readiness, and production blockers |
 | [docs/pentest-scoping.md](./docs/pentest-scoping.md) | IT/OT pentest scope, rules, and expected deliverables |
 | [docs/gap-closure-report.md](./docs/gap-closure-report.md) | Gate 1 closure status for supplementary docs and site infrastructure |
+| [docs/gate3-readiness-sprint.md](./docs/gate3-readiness-sprint.md) | Two-week integrated backlog for GAP-006 to GAP-012 and the locked post-sprint sequence |
+| [docs/pentest-kickoff-pack.md](./docs/pentest-kickoff-pack.md) | Execution-ready staging pentest procurement, access, and scheduling pack |
+| [docs/bim-sensor-traceability-matrix.md](./docs/bim-sensor-traceability-matrix.md) | Cross-document asset, zone, anchor, gateway, and historian traceability matrix |
+| [docs/commissioning-data-acceptance-checklist.md](./docs/commissioning-data-acceptance-checklist.md) | Historian, MES, and simulation data acceptance checklist for commissioning |
+| [docs/simulation-signoff-baseline.md](./docs/simulation-signoff-baseline.md) | First-use-case simulation baseline and sign-off boundary for planning-stage approval |
+| [docs/gate3-evidence-dashboard.md](./docs/gate3-evidence-dashboard.md) | Owner-by-owner evidence dashboard for BIM, sensor, cyber, and simulation closure work |
 | [docs/sensor-map.md](./docs/sensor-map.md) | Standalone sensor registry: tags, scan rates, protocols, gateway mapping, coverage |
 | [docs/mes-integration.md](./docs/mes-integration.md) | Batch MES, DCS integration, API endpoints, AI data feeds |
 | [docs/bim/README.md](./docs/bim/README.md) | BIM layer overview, model standards, and document structure |

@@ -387,6 +387,12 @@ by end of Phase 1.
 | [ai-platform-status.md](./ai-platform-status.md) | AI service inventory, endpoint readiness, and go-live blockers |
 | [pentest-scoping.md](./pentest-scoping.md) | IT/OT security scope, rules of engagement, and deliverables |
 | [gap-closure-report.md](./gap-closure-report.md) | Gate 1 closure status for supplementary docs and site readiness |
+| [gate3-readiness-sprint.md](./gate3-readiness-sprint.md) | Two-week integrated backlog for GAP-006 to GAP-012 and the locked post-sprint sequence |
+| [pentest-kickoff-pack.md](./pentest-kickoff-pack.md) | Execution-ready staging pentest procurement, access, and scheduling pack |
+| [bim-sensor-traceability-matrix.md](./bim-sensor-traceability-matrix.md) | Cross-document asset, zone, anchor, gateway, and historian traceability matrix |
+| [commissioning-data-acceptance-checklist.md](./commissioning-data-acceptance-checklist.md) | Historian, MES, and simulation data acceptance checklist for commissioning |
+| [simulation-signoff-baseline.md](./simulation-signoff-baseline.md) | First-use-case simulation baseline and sign-off boundary for planning-stage approval |
+| [gate3-evidence-dashboard.md](./gate3-evidence-dashboard.md) | Owner-by-owner evidence dashboard for BIM, sensor, cyber, and simulation closure work |
 | [mes-integration.md](./mes-integration.md) | Batch MES, DCS integration, API endpoints, AI data feeds |
 
 ---
